@@ -11,6 +11,7 @@ import Places from 'components/places/places'
 import Activities from 'components/activities/activities'
 import Users from 'components/users/users'
 import Systems from 'components/systems/systems'
+import NewPlace from 'components/newPlace/newPlace'
 
 Vue.use(ElementUI)
 Vue.use(VueRouter)
@@ -33,6 +34,9 @@ const routes = [{
   }, {
     path: 'systems',
     component: Systems
+  }, {
+    path: 'newPlace',
+    component: NewPlace
   }]
 }]
 
@@ -50,4 +54,4 @@ new Vue({
   router
 })
 
-router.push('/login')
+router.replace('/main')

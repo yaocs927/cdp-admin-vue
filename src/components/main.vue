@@ -1,6 +1,6 @@
 <template>
   <div class="adminmain">
-    <el-row>
+    <el-row class="topMenu">
       <el-col :span="4">
         <el-menu theme="dark" default-active="/main/places" class="el-menu-demo" mode="horizontal" router>
           <el-menu-item class="logo" index="/main/places">CDP</el-menu-item>
@@ -16,23 +16,13 @@
       </el-col>
     </el-row>
     <el-row>
-      <el-col :span="4">
-        <el-menu default-active="2" class="el-menu-vertical-demo">
-          <el-submenu index="1">
-            <template slot="title"><i class="el-icon-message"></i>导航一</template>
-            <el-menu-item-group title="分组一">
-              <el-menu-item index="1-1">选项1</el-menu-item>
-              <el-menu-item index="1-2">选项2</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group title="分组2">
-              <el-menu-item index="1-3">选项3</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-          <el-menu-item index="2"><i class="el-icon-menu"></i>导航二</el-menu-item>
-          <el-menu-item index="3"><i class="el-icon-setting"></i>导航三</el-menu-item>
+      <el-col :span="4" class="sideMenu">
+        <el-menu default-active="/main/places" class="el-menu-vertical-demo" router>
+          <el-menu-item index="/main/places"><i class="el-icon-menu"></i>场地列表</el-menu-item>
+          <el-menu-item index="/main/newPlace"><i class="el-icon-menu"></i>新增场地</el-menu-item>
         </el-menu>
       </el-col>
-      <el-col :span="20">
+      <el-col :span="20" :offset="4" class="mainContent">
         <router-view></router-view>
       </el-col>
   </div>
@@ -54,5 +44,22 @@
   .el-menu {
     border-radius: 0 !important;
   }
+  
+  .topMenu {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+  }
 
+  .sideMenu {
+    position: fixed;
+    top: 60px;
+    height: 100%;
+    background-color: #eff2f7;
+  }
+
+  .mainContent {
+    margin-top: 60px;
+    padding: 20px;
+  }
 </style>
