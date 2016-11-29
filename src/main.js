@@ -54,4 +54,4 @@ new Vue({
   router
 })
 
-router.replace('/main')
+router.replace('/main/places')
