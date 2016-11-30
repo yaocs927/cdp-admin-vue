@@ -12,6 +12,7 @@ import Activities from 'components/activities/activities'
 import Users from 'components/users/users'
 import Systems from 'components/systems/systems'
 import NewPlace from 'components/newPlace/newPlace'
+import Homepage from 'components/homepage/homepage'
 
 Vue.use(ElementUI)
 Vue.use(VueRouter)
@@ -23,6 +24,9 @@ const routes = [{
   path: '/main',
   component: Main,
   children: [{
+    path: 'homepage',
+    component: Homepage
+  }, {
     path: 'places',
     component: Places
   }, {
@@ -54,4 +58,4 @@ new Vue({
   router
 })
 
-router.replace('/main/places')
+router.replace('/main/homepage')
